@@ -5881,11 +5881,11 @@
             </div>
             <div class="xm-pane on" id="xm-p-call">
                 <div style="font-size:60px">🎅📱</div>
-                <p class="xm-p">圣诞老人好像有话想对你说……<br>点下面的按钮，准备接电话吧 🔔</p>
+                <p class="xm-p">Ho ho ho Merry Christmas❄️圣诞快乐☃️……<br>点下面的按钮，准备接电话吧 🔔</p>
                 <button class="xm-btn" onclick="xmasStartCall()">📞 等待来电</button>
             </div>
             <div class="xm-pane" id="xm-p-photo">
-                <p class="xm-p">点树上的金色圆圈，把照片挂上去；点挂好的照片可以放大 ✨<br>三张都挂满，会有一份祝福 🎁</p>
+                <p class="xm-p">点树上的金色圆圈，把照片挂上去；点挂好的照片可以放大 ✨<br>嘿嘿，把三张挂满哦💫🌟</p>
                 <div id="xm-tree"><span class="base">🎄</span></div>
                 <div id="xm-photo-ctl"></div>
             </div>
@@ -5905,9 +5905,9 @@
             giftVideo:  'xmas-gift.mp4',   // 挂断后的惊喜视频
             blessVideo: 'xmas-bless.mp4',  // 三张照片挂满后的祝福视频
             photos: [                      // 三张照片挂饰
-                {src: 'xmas-photo1.jpg', text: '愿你被温柔以待 🎄'},
-                {src: 'xmas-photo2.jpg', text: '今年也要开开心心 🎁'},
-                {src: 'xmas-photo3.jpg', text: '新的一年万事胜意 ⭐'}
+                {src: 'xmas-photo1.jpg', text: '愿你每天都有好心情 🎄'},
+                {src: 'xmas-photo2.jpg', text: '嘿嘿 没想到吧 这些是抹不走的回忆 我是不会轻易删掉这些旧照的🤗😆'},
+                {src: 'xmas-photo3.jpg', text: '愿你一切安好 平安顺遂 ⭐'}
             ]
         };
         // ===========================================================================
@@ -5992,7 +5992,7 @@
             v.src = src; var p = v.play(); if (p && p.catch) p.catch(function(){v.controls = true});
         }
         function giftStage(){
-            scr.innerHTML = '<div class="xin"><div class="xnm">🎁 圣诞老人留下了礼物</div><div class="xst">点一点，拆开看看</div><div class="xgift">🎁</div></div>';
+            scr.innerHTML = '<div class="xin"><div class="xnm">🧙‍♂️ HO HO HO HO HO</div><div class="xst">点一点，拆开看看</div><div class="xgift">🎁</div></div>';
             scr.querySelector('.xgift').onclick = function(){
                 try { confetti({particleCount:90, spread:80, origin:{y:.5}, colors:['#e63946','#2d6a4f','#ffd700','#fff']}); } catch (e) {}
                 playStage(CFG.giftVideo, closeCall);
@@ -6003,7 +6003,7 @@
             playStage(CFG.callVideo, giftStage);
         }
         function ringStage(){
-            scr.innerHTML = '<div class="xin"><div class="xst">📞 来电中…</div><div class="xav">🎅</div><div class="xnm">' + CFG.callerName + '</div><div class="xst">圣诞来电 · 有话想对你说</div>' +
+            scr.innerHTML = '<div class="xin"><div class="xst">📞 来电中…</div><div class="xav">🎅</div><div class="xnm">' + CFG.callerName + '</div><div class="xst">圣诞来电 · 富贵碗准备接电话了吗</div>' +
                 '<button id="xrej">拒绝</button><div class="xtrk"><span>滑动接听 ➜</span><div class="xthumb">📞</div></div></div>';
             // 拒绝键：永远按不到
             var rej = $('xrej'), box = scr.querySelector('.xin'), tips = ['哎呀按不到～', '想拒绝？没门 😝', '圣诞老人不会挂你电话的', '手别抖！', '拒绝失败，请接听 🎅'], ti = 0;
