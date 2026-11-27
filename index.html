@@ -5819,14 +5819,14 @@
 
     <!-- ===== 🎄 圣诞特别篇 CHRISTMAS ADDON ===== -->
     <style>
-        #xmas-bg{position:fixed;inset:0;z-index:-1;display:none;background:linear-gradient(135deg,#0b3d2e 0%,#14532d 30%,#7f1d1d 65%,#d4af37 100%);background-size:300% 300%;animation:gradientBG 10s ease infinite}
+        #xmas-bg{position:fixed;top:0;right:0;bottom:0;left:0;z-index:-1;display:none;background:linear-gradient(135deg,#0b3d2e 0%,#14532d 30%,#7f1d1d 65%,#d4af37 100%);background-size:300% 300%;animation:gradientBG 10s ease infinite}
         body.xmas-on{background:linear-gradient(135deg,#0b3d2e 0%,#14532d 30%,#7f1d1d 65%,#d4af37 100%) !important;background-size:300% 300% !important}
-        #xmas-snow{position:fixed;inset:0;z-index:9000;pointer-events:none;display:none}
+        #xmas-snow{position:fixed;top:0;right:0;bottom:0;left:0;z-index:9000;pointer-events:none;display:none}
         #xmas-fab{position:fixed;right:14px;bottom:18px;z-index:9400;width:54px;height:54px;border-radius:50%;border:3px solid #ffd700;background:linear-gradient(180deg,#e63946,#a4161a);font-size:28px;cursor:pointer;box-shadow:0 0 18px rgba(230,57,70,.7);animation:xmasPulse 2.4s ease-in-out infinite}
         @keyframes xmasPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
-        #xmas-modal{position:fixed;inset:0;z-index:12400;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(8,28,20,.94)}
+        #xmas-modal{position:fixed;top:0;right:0;bottom:0;left:0;z-index:12400;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(8,28,20,.94)}
         #xmas-modal.show{display:flex}
-        .xm-card{position:relative;width:100%;max-width:400px;max-height:92vh;overflow-y:auto;background:linear-gradient(180deg,#fff7f0,#ffe3e3);border:3px solid #c1121f;border-radius:22px;padding:16px 14px;color:#3b1a1a;text-align:center;box-shadow:0 0 30px rgba(255,215,0,.45)}
+        .xm-card{position:relative;width:100%;max-width:400px;max-height:92vh;max-height:92dvh;overflow-y:auto;background:linear-gradient(180deg,#fff7f0,#ffe3e3);border:3px solid #c1121f;border-radius:22px;padding:16px 14px;color:#3b1a1a;text-align:center;box-shadow:0 0 30px rgba(255,215,0,.45)}
         .xm-x{position:absolute;top:8px;right:12px;background:none;border:none;font-size:22px;cursor:pointer;color:#7f1d1d}
         .xm-title{font-size:19px;font-weight:bold;color:#c1121f;margin:2px 0 8px}
         .xm-tabs{display:flex;gap:6px;margin:6px 0 10px}
@@ -5844,25 +5844,25 @@
         .xm-ball::before{content:"";position:absolute;top:-8px;left:50%;width:2px;height:8px;background:#ffd700}
         @keyframes xmDrop{from{top:-10%;opacity:0}}
         /* 手机来电 */
-        #xcall{position:fixed;inset:0;z-index:12700;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88)}
+        #xcall{position:fixed;top:0;right:0;bottom:0;left:0;z-index:12700;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88)}
         #xcall.show{display:flex}
-        .xph{position:relative;width:min(84vw,320px);height:min(86vh,640px);border:7px solid #111;border-radius:36px;background:#000;box-shadow:0 0 0 2px #444,0 0 40px rgba(230,57,70,.5);overflow:hidden}
+        .xph{position:relative;width:min(84vw,320px);height:min(86vh,640px);height:min(86dvh,640px);border:7px solid #111;border-radius:36px;background:#000;box-shadow:0 0 0 2px #444,0 0 40px rgba(230,57,70,.5);overflow:hidden}
         .xph::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:20px;background:#111;border-radius:0 0 14px 14px;z-index:5}
-        .xscr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;color:#fff;background:linear-gradient(180deg,#14532d,#0b1f17 60%,#3b0a0a);overflow:hidden}
+        .xscr{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;flex-direction:column;align-items:center;color:#fff;background:linear-gradient(180deg,#14532d,#0b1f17 60%,#3b0a0a);overflow:hidden}
         .xin{position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;padding-top:60px}
         .xav{font-size:76px;width:120px;height:120px;border-radius:50%;background:#c1121f;display:flex;align-items:center;justify-content:center;margin:14px 0 10px;animation:xmShake .5s infinite}
         @keyframes xmShake{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
         .xnm{font-size:24px;font-weight:bold}
         .xst{font-size:13px;opacity:.8;margin-top:4px}
         .xtrk{position:absolute;left:18px;right:18px;bottom:46px;height:58px;border-radius:30px;background:rgba(255,255,255,.18);overflow:hidden}
-        .xtrk span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:40px;font-size:14px;opacity:.9}
+        .xtrk span{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;justify-content:center;padding-left:40px;font-size:14px;opacity:.9}
         .xthumb{position:absolute;left:4px;top:4px;width:50px;height:50px;border-radius:50%;background:#2ecc71;font-size:24px;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab;z-index:2}
         #xrej{position:absolute;left:30px;top:62%;padding:9px 16px;border:none;border-radius:20px;background:#e63946;color:#fff;font-size:14px;font-weight:bold;font-family:inherit;transition:left .15s,top .15s;z-index:3}
         .xvid{width:100%;height:100%;object-fit:contain;background:#000}
         .xhang{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;border:none;background:#e63946;font-size:24px;cursor:pointer;z-index:6}
         .xgift{font-size:96px;margin-top:140px;cursor:pointer;animation:xmasPulse 1.2s infinite}
         .xerr{position:absolute;top:50px;left:10px;right:10px;font-size:12px;background:rgba(0,0,0,.7);padding:6px;border-radius:8px;z-index:4}
-        #xm-lb{position:fixed;inset:0;z-index:12750;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.9);color:#fff;text-align:center;padding:20px}
+        #xm-lb{position:fixed;top:0;right:0;bottom:0;left:0;z-index:12750;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.9);color:#fff;text-align:center;padding:20px}
         #xm-lb.show{display:flex}
         #xm-lb img{max-width:92vw;max-height:70vh;border-radius:14px;border:3px solid #ffd700}
     </style>
@@ -5984,7 +5984,7 @@
             bgmResume();
         }
         function playStage(src, onDone){
-            scr.innerHTML = '<video class="xvid" playsinline webkit-playsinline autoplay></video><button class="xhang" title="挂断">📵</button>';
+            scr.innerHTML = '<video class="xvid" playsinline webkit-playsinline preload="auto" autoplay></video><button class="xhang" title="挂断">📵</button>';
             var v = scr.querySelector('video'), done = false;
             function end(){if (done) return; done = true; try { v.pause(); } catch (e) {} onDone()}
             v.onerror = function(){showErr(src)};
@@ -6016,17 +6016,18 @@
             }
             ['pointerenter', 'pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function(ev){rej.addEventListener(ev, run, {passive: false})});
             // 滑动接听
-            var th = scr.querySelector('.xthumb'), trk = scr.querySelector('.xtrk'), sx = 0, dragging = false;
+            var th = scr.querySelector('.xthumb'), trk = scr.querySelector('.xtrk'), sx = 0, dragging = false, reached = false;
             th.addEventListener('pointerdown', function(e){dragging = true; sx = e.clientX; th.setPointerCapture(e.pointerId)});
             th.addEventListener('pointermove', function(e){
                 if (!dragging) return; var max = trk.clientWidth - 58;
                 var x = Math.max(0, Math.min(max, e.clientX - sx)); th.style.left = (4 + x) + 'px';
-                if (x > max * .85) { dragging = false; answer(); }
+                reached = x > max * .85; th.style.background = reached ? '#27ae60' : '#2ecc71';
             });
-            function up(){if (!dragging) return; dragging = false; th.style.transition = 'left .2s'; th.style.left = '4px'; setTimeout(function(){th.style.transition = ''}, 220)}
+            function up(){if (!dragging) return; dragging = false; if (reached) { answer(); return; } th.style.transition = 'left .2s'; th.style.left = '4px'; setTimeout(function(){th.style.transition = ''}, 220)}
             th.addEventListener('pointerup', up); th.addEventListener('pointercancel', up);
         }
         window.xmasStartCall = function(){
+            try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); ac.resume(); if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) {}
             xmasClose(); bgmPause(); ov.classList.add('show');
             scr.innerHTML = '<div class="xin"><div class="xst" style="margin-top:200px">📱 手机在响……</div></div>';
             setTimeout(function(){ringStage(); startRing()}, 900);
@@ -6078,6 +6079,210 @@
         if (env) { var st = document.createElement('div'); st.style.cssText = 'text-align:center;font-size:13px;color:#c1121f;font-weight:bold;margin-bottom:4px'; st.innerText = '🎅 圣诞特别版 · 右下角有惊喜 🎄'; env.insertBefore(st, env.firstChild); }
 
         applySnow();
+    })();
+    </script>
+
+    <!-- ===== ✉️ 飞鸽 / 乌龟 留言 CHAT ADDON ===== -->
+    <style>
+        #xc-fab{position:fixed;left:14px;bottom:18px;z-index:9400;height:46px;padding:0 16px;border-radius:23px;border:3px solid #ffd700;background:linear-gradient(180deg,#2d6a4f,#0b3d2e);color:#fff;font-size:15px;font-weight:bold;cursor:pointer;box-shadow:0 0 16px rgba(0,0,0,.45);font-family:inherit}
+        #xc-badge{position:absolute;top:-8px;right:-6px;min-width:20px;height:20px;border-radius:10px;background:#e63946;color:#fff;font-size:12px;line-height:20px;display:none}
+        #xc-panel{position:fixed;top:0;right:0;bottom:0;left:0;z-index:12450;display:none;align-items:center;justify-content:center;padding:12px;background:rgba(8,20,16,.92)}
+        #xc-panel.show{display:flex}
+        .xc-card{position:relative;width:100%;max-width:420px;height:min(90vh,680px);height:min(90dvh,680px);display:flex;flex-direction:column;background:linear-gradient(180deg,#fff7f0,#ffeede);border:3px solid #2d6a4f;border-radius:22px;color:#3b1a1a;overflow:hidden;box-shadow:0 0 30px rgba(255,215,0,.35)}
+        .xc-top{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;background:#2d6a4f;color:#fff;font-weight:bold;font-size:15px}
+        .xc-top button{background:none;border:none;color:#fff;font-size:18px;cursor:pointer;font-family:inherit;padding:2px 6px}
+        .xc-body{flex:1;overflow-y:auto;padding:12px;-webkit-overflow-scrolling:touch}
+        .xc-login{text-align:center;padding-top:40px}
+        .xc-in{width:100%;box-sizing:border-box;border:2px solid #2d6a4f;border-radius:12px;padding:10px;font-size:16px;font-family:inherit;color:#3b1a1a;background:#fff}
+        .xc-btn{background:#ffd700;color:#3a1150;border:none;border-radius:20px;padding:10px 18px;font-size:15px;font-weight:bold;cursor:pointer;font-family:inherit;margin-top:10px}
+        .xc-btn[disabled]{opacity:.5}
+        .xc-row{display:flex;flex-direction:column;margin-bottom:12px}
+        .xc-row.me{align-items:flex-end}.xc-row.ot{align-items:flex-start}
+        .xc-b{max-width:82%;padding:9px 12px;border-radius:16px;font-size:15px;line-height:1.6;white-space:pre-wrap;word-break:break-word}
+        .me .xc-b{background:#2d6a4f;color:#fff;border-bottom-right-radius:4px}
+        .ot .xc-b{background:#fff;border:1px solid #e0c9c9;border-bottom-left-radius:4px}
+        .xc-meta{font-size:11px;color:#8a6a6a;margin-top:3px}
+        .xc-meta.fly{color:#c1121f;font-weight:bold}.xc-meta.ok{color:#2d6a4f;font-weight:bold}
+        .xc-send{padding:8px 12px 12px;border-top:2px solid #e8d3c0;background:#fff3e6}
+        .xc-pick{display:flex;gap:8px;margin-bottom:8px}
+        .xc-pick button{flex:1;padding:7px 4px;font-size:13px;font-weight:bold;border-radius:12px;border:2px solid #bbb;background:#fff;color:#555;cursor:pointer;font-family:inherit}
+        .xc-pick button.on{border-color:#c1121f;background:#ffe3e3;color:#c1121f}
+        .xc-adm{font-size:12px;color:#2d6a4f;font-weight:bold;margin-bottom:6px}
+        .xc-tip{font-size:12px;color:#c1121f;min-height:16px;margin-top:4px}
+        .xc-rc{color:#c1121f;text-decoration:underline;cursor:pointer;padding:2px 4px}
+        .xc-gone{text-align:center;font-size:12px;color:#8a6a6a;margin:6px 0 14px}
+        .xc-ring{animation:xcRing 1.1s ease-in-out infinite}
+        @keyframes xcRing{0%,100%{transform:rotate(0)}20%{transform:rotate(-8deg)}40%{transform:rotate(8deg)}60%{transform:rotate(-5deg)}80%{transform:rotate(5deg)}}
+        #xc-toast{position:fixed;left:14px;bottom:72px;z-index:9450;max-width:70vw;padding:10px 14px;border-radius:14px;background:#c1121f;color:#fff;font-size:14px;font-weight:bold;box-shadow:0 4px 16px rgba(0,0,0,.4);cursor:pointer;display:none}
+        #xc-fly{position:fixed;top:0;right:0;bottom:0;left:0;z-index:12780;display:none;overflow:hidden;background:linear-gradient(180deg,#0b1d3a,#1e3a5f 55%,#4a7aa8);color:#fff;text-align:center}
+        #xc-fly.show{display:block}
+        #xc-fly .xc-ln{position:absolute;left:0;right:0;font-size:15px}
+        .xc-land{position:absolute;bottom:20%;font-size:15px;font-weight:bold}
+        .xc-cloud{position:absolute;font-size:44px;opacity:.7;animation:xcCloud 14s linear infinite}
+        @keyframes xcCloud{from{transform:translateX(0)}to{transform:translateX(-120vw)}}
+        .xc-go{position:absolute;left:6%;top:38%;font-size:54px;animation:xcGo var(--t,4s) linear forwards}
+        .xc-go.rev{left:auto;right:6%;animation-name:xcGoRev}
+        @keyframes xcGo{to{left:78%}}
+        @keyframes xcGoRev{to{right:78%}}
+        .xc-go i{display:block;font-style:normal;animation:xcBob 1s ease-in-out infinite}
+        @keyframes xcBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+        .xc-go small{display:block;font-size:26px;margin-top:-10px}
+    </style>
+
+    <button id="xc-fab" onclick="xcOpen()">🕊️ 留言<span id="xc-badge"></span></button>
+
+    <div id="xc-panel"><div class="xc-card">
+        <div class="xc-top"><span id="xc-title">🕊️ 飞鸽留言</span><span><button id="xc-out" onclick="xcLogout()" style="display:none">退出</button><button onclick="xcClose()">✕</button></span></div>
+        <div class="xc-body" id="xc-body"></div>
+        <div class="xc-send" id="xc-send" style="display:none">
+            <div id="xc-who"></div>
+            <textarea class="xc-in" id="xc-text" rows="3" maxlength="500" placeholder="写下想说的话…"></textarea>
+            <div style="display:flex;align-items:center;justify-content:space-between"><div class="xc-tip" id="xc-tip"></div><button class="xc-btn" id="xc-sendbtn" onclick="xcSend()">放飞 ✉️</button></div>
+        </div>
+    </div></div>
+
+    <div id="xc-fly" onclick="xcFlyEnd()"></div>
+
+    <script>
+    (function () {
+        // ============ 👇 部署好 Worker 后，把网址填在这里 ============
+        var CHAT_API = 'https://chat-worker.huizhichong2003.workers.dev';
+        var CFG = { otherForUser: '🇲🇾 对方', otherForAdmin: '🇨🇳 对方' };
+        // ==============================================================
+        function $(id){return document.getElementById(id)}
+        function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+        function lsSet(k,v){try{v === null ? localStorage.removeItem(k) : localStorage.setItem(k,v)}catch(e){}}
+        var prevN = 0, pass = lsGet('xc_pass') || '', role = '', skew = 0, msgs = [], animal = 'bird', timer = null, isOpen = false, sending = false;
+        function S(){return Date.now() + skew}
+        function ready(){return CHAT_API.indexOf('你的') < 0}
+
+        function api(path, opt){
+            opt = opt || {};
+            var ctl = ('AbortController' in window) ? new AbortController() : null;
+            var to = setTimeout(function(){ctl && ctl.abort()}, 15000);
+            return fetch(CHAT_API + path, {
+                method: opt.body ? 'POST' : 'GET', signal: ctl ? ctl.signal : undefined,
+                headers: {'x-pass': encodeURIComponent(opt.pass !== undefined ? opt.pass : pass), 'content-type': 'application/json'},
+                body: opt.body ? JSON.stringify(opt.body) : undefined
+            }).then(function(r){clearTimeout(to); return r.json().then(function(j){if (!r.ok) throw new Error(j.error || '出错了'); return j})},
+                    function(){clearTimeout(to); throw new Error('网络不通，稍后再试 🌐')});
+        }
+
+        // ---------- 面板 ----------
+        window.xcOpen = function(){
+            $('xc-panel').classList.add('show'); isOpen = true; var tt = $('xc-toast'); if (tt) tt.style.display = 'none';
+            if (pass && role) { chatView(); refresh(true); } else if (pass) autoLogin(); else loginView();
+            clearInterval(timer); timer = setInterval(function(){if (pass && role) refresh(isOpen)}, 20000);
+        };
+        window.xcClose = function(){$('xc-panel').classList.remove('show'); isOpen = false};
+        window.xcLogout = function(){pass = ''; role = ''; msgs = []; lsSet('xc_pass', null); badge(0); loginView()};
+
+        function loginView(msg){
+            $('xc-send').style.display = 'none'; $('xc-out').style.display = 'none'; $('xc-title').innerText = '🕊️ 飞鸽留言';
+            $('xc-body').innerHTML = '<div class="xc-login"><div style="font-size:56px">🕊️🐢</div><p style="font-size:14px;line-height:1.8">输入暗号，才能给远方寄信～</p><div style="font-size:12px;color:#8a6a6a;line-height:1.8;margin-bottom:12px">欢迎留言 🎄<br>有任何问题 / bug / 想说的话，都可以留言哦💫🕊️✈️</div>' +
+                '<input class="xc-in" id="xc-pw" type="text" style="-webkit-text-security:disc;text-security:disc" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="请输入密码" /><div class="xc-tip" id="xc-ltip">' + (msg || (ready() ? '' : '⚠️ 还没设置后端网址')) + '</div>' +
+                '<button class="xc-btn" id="xc-lbtn">进入</button></div>';
+            $('xc-lbtn').onclick = doLogin; $('xc-pw').onkeydown = function(e){if (e.key === 'Enter' && !e.isComposing) doLogin()};
+        }
+        function doLogin(){
+            var v = $('xc-pw').value; if (!v) return; if (!ready()) { $('xc-ltip').innerText = '⚠️ 还没设置后端网址'; return; }
+            $('xc-lbtn').disabled = true; $('xc-ltip').innerText = '验证中…';
+            api('/api/login', {pass: v}).then(function(r){
+                pass = v; role = r.role; skew = r.now - Date.now(); lsSet('xc_pass', v); chatView(); refresh(true);
+            }).catch(function(e){$('xc-lbtn').disabled = false; $('xc-ltip').innerText = '❌ ' + e.message});
+        }
+        function autoLogin(){
+            $('xc-body').innerHTML = '<div class="xc-login">连接中…</div>';
+            api('/api/login').then(function(r){role = r.role; skew = r.now - Date.now(); chatView(); refresh(true)})
+                .catch(function(e){if (/密码/.test(e.message)) { pass = ''; lsSet('xc_pass', null); loginView('密码失效了，请重新输入'); } else loginView(e.message)});
+        }
+
+        // ---------- 聊天界面 ----------
+        function chatView(){
+            var adm = role === 'admin'; $('xc-body').dataset.first = '';
+            $('xc-out').style.display = ''; $('xc-send').style.display = '';
+            $('xc-title').innerText = (adm ? '⚡ ' : '🕊️ ') + (adm ? CFG.otherForAdmin : CFG.otherForUser);
+            $('xc-who').innerHTML = adm ? '<div class="xc-adm">⚡ ADMIN 模式：即时收发，不用等</div>' :
+                '<div class="xc-pick"><button id="xc-a1" class="on">🕊️ 鸽子 · 3–5 天</button><button id="xc-a2">🐢 乌龟 · 5–7 天</button></div>';
+            if (!adm) {
+                $('xc-a1').onclick = function(){animal = 'bird'; $('xc-a1').className = 'on'; $('xc-a2').className = ''};
+                $('xc-a2').onclick = function(){animal = 'turtle'; $('xc-a2').className = 'on'; $('xc-a1').className = ''};
+            }
+            render();
+        }
+        function stat(m){
+            if (m.readAt) return ['✓✓ 已读', 'ok'];
+            if (S() >= m.etaAt) return ['✓ 已送达', 'ok'];
+            var d = Math.max(1, Math.ceil((m.etaAt - S()) / 864e5));
+            return [(m.animal === 'turtle' ? '🐢' : '🕊️') + ' 飞行中 · 还要约 ' + d + ' 天', 'fly'];
+        }
+        function esc(s){return String(s).replace(/[&<>"]/g, function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+        function render(){
+            if (!role) return; var b = $('xc-body'), near = b.scrollHeight - b.scrollTop - b.clientHeight < 80, h = '';
+            if (!msgs.length) h = '<div class="xc-login" style="padding-top:60px;font-size:14px;line-height:1.8">还没有信～<br>写下第一封吧 ✉️</div>';
+            msgs.forEach(function(m){
+                var me = m.from === role, st = stat(m), t = new Date(m.sentAt), ts = (t.getMonth() + 1) + '月' + t.getDate() + '日 ' + ('0' + t.getHours()).slice(-2) + ':' + ('0' + t.getMinutes()).slice(-2);
+                h += m.recalled ? '<div class="xc-gone">' + (me ? '你撤回了一封信' : '对方撤回了一封信') + ' · ' + ts + '</div>' : '<div class="xc-row ' + (me ? 'me' : 'ot') + '"><div class="xc-b">' + esc(m.text) + '</div><div class="xc-meta ' + (me ? st[1] : '') + '">' + (me ? st[0] + ' · ' : (m.from === 'user' ? (m.animal === 'turtle' ? '🐢 ' : '🕊️ ') : '⚡ ')) + ts + (me && (role === 'admin' || !m.readAt) ? ' · <span class="xc-rc" data-id="' + m.id + '">撤回</span>' : '') + '</div>' + (m.hidden ? '<div class="xc-meta fly">🔒 她撤回了这封信，她的页面已隐藏，只有你看得到</div>' : '') + '</div>';
+            });
+            b.innerHTML = h; if (near || b.dataset.first !== '1') { b.scrollTop = b.scrollHeight; b.dataset.first = '1'; }
+        }
+        function badge(n){var e = $('xc-badge'); e.style.display = n ? 'block' : 'none'; e.innerText = n; $('xc-fab').className = n ? 'xc-ring' : ''}
+        function refresh(mark){
+            api('/api/messages' + (mark ? '?markRead=1' : '')).then(function(r){
+                skew = r.now - Date.now(); role = r.role; msgs = r.msgs;
+                var n = isOpen ? 0 : msgs.filter(function(m){return m.from !== role && !m.readAt && !m.recalled}).length; badge(n); if (n > prevN) toast(n); prevN = n;
+                if (isOpen) render();
+            }).catch(function(e){if (isOpen && /密码/.test(e.message)) xcLogout()});
+        }
+
+        // ---------- 发送 + 飞行动画 ----------
+        window.xcSend = function(){
+            var t = $('xc-text').value.trim(); if (!t || sending) return;
+            sending = true; $('xc-sendbtn').disabled = true; $('xc-tip').innerText = '';
+            api('/api/send', {body: {text: t, animal: animal}}).then(function(r){
+                skew = r.now - Date.now(); $('xc-text').value = ''; msgs.push(r.msg); render(); fly(r.msg);
+            }).catch(function(e){$('xc-tip').innerText = '❌ ' + e.message})
+              .then(function(){sending = false; $('xc-sendbtn').disabled = false});
+        };
+        var flyT = null;
+        function fly(m){
+            var adm = m.from === 'admin', turtle = m.animal === 'turtle', icon = adm ? '🕊️' : (turtle ? '🐢' : '🕊️'), sec = turtle ? 7 : 4.2;
+            var days = Math.max(1, Math.ceil((m.etaAt - S()) / 864e5));
+            var from = adm ? '🇲🇾 马来西亚' : '🇨🇳 中国', to = adm ? '🇨🇳 中国' : '🇲🇾 马来西亚';
+            var line = adm ? '⚡ 信瞬间飞到啦！' : (turtle ? '🐢 乌龟驮着信，慢慢爬走啦～' : '🕊️ 鸽子带着信飞走啦～');
+            var eta = adm ? '对方马上就能收到' : '预计 ' + (turtle ? '5–7' : '3–5') + ' 天到达（这次约 ' + days + ' 天）';
+            var f = $('xc-fly');
+            f.innerHTML = '<div class="xc-cloud" style="top:14%;left:100%">☁️</div><div class="xc-cloud" style="top:30%;left:140%;animation-duration:20s">☁️</div><div class="xc-cloud" style="top:62%;left:110%;animation-duration:17s">' + (turtle ? '🌊' : '☁️') + '</div>' +
+                '<div class="xc-ln" style="top:10%;font-size:20px;font-weight:bold">' + line + '</div>' +
+                '<div class="xc-ln" style="top:17%;opacity:.85">从 ' + from + ' 飞向 ' + to + '</div>' +
+                '<div class="xc-go' + (adm ? ' rev' : '') + '" style="--t:' + sec + 's"><i>' + icon + '</i><small>✉️</small></div>' +
+                '<div class="xc-land" style="' + (adm ? 'right' : 'left') + ':6%">' + from.split(' ')[0] + '</div><div class="xc-land" style="' + (adm ? 'left' : 'right') + ':6%">' + to.split(' ')[0] + '</div>' +
+                '<div class="xc-ln" style="bottom:22%;font-size:17px;font-weight:bold;color:#ffd700">' + eta + '</div><div class="xc-ln" style="bottom:8%;font-size:12px;opacity:.6">点一下屏幕返回</div>';
+            f.classList.add('show'); clearTimeout(flyT); flyT = setTimeout(window.xcFlyEnd, sec * 1000 + 2500);
+        }
+        window.xcFlyEnd = function(){clearTimeout(flyT); $('xc-fly').classList.remove('show'); refresh(false)};
+
+        // ---------- 新信提示条 ----------
+        function toast(n){
+            var t = $('xc-toast');
+            if (!t) { t = document.createElement('div'); t.id = 'xc-toast'; t.onclick = function(){t.style.display = 'none'; xcOpen()}; document.body.appendChild(t); }
+            t.innerText = '🕊️ 有 ' + n + ' 封新信到啦！点我看看'; t.style.display = 'block';
+            try { navigator.vibrate && navigator.vibrate([200, 100, 200]); } catch (e) {}
+            clearTimeout(t._h); t._h = setTimeout(function(){t.style.display = 'none'}, 8000);
+        }
+
+        // ---------- 撤回 ----------
+        $('xc-body').addEventListener('click', function(e){
+            var t = e.target; if (!t.classList || !t.classList.contains('xc-rc')) return;
+            if (!confirm(role === 'admin' ? '确定撤回这封信吗？对方的页面会显示「对方撤回了一封信」。' : '确定撤回这封信吗？撤回后，这封信会从你的页面消失。')) return;
+            api('/api/recall', {body: {id: t.getAttribute('data-id')}}).then(function(){refresh(false)})
+                .catch(function(er){alert(er.message); refresh(false)});
+        });
+
+        // ---------- 后台：有新信时按钮上显示红点 ----------
+        if (pass && ready()) api('/api/login').then(function(r){role = r.role; skew = r.now - Date.now(); refresh(false)}).catch(function(){});
+        setInterval(function(){if (pass && role && !isOpen && !document.hidden) refresh(false)}, 30000);
+        document.addEventListener('visibilitychange', function(){if (!document.hidden && pass && role) refresh(isOpen)});
     })();
     </script>
 
