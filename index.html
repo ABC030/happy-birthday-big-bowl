@@ -3531,11 +3531,11 @@
         //    with the current device's local state before PUTting it back.
         //    This prevents Device B/C from replacing Device A's history.
         // -----------------------------------------------------------
-        const JSONBIN_BIN_ID = "6ab731d6ffd5d16053301048";
+        const JSONBIN_BIN_ID = "6a77b481f5f4af5e29fcd624";
         // Replace this placeholder with your current JSONBin Master Key.
         // WARNING: A Master Key inside browser JavaScript is visible to users.
         // For a private production system, use a backend/proxy instead.
-        const JSONBIN_API_KEY = "$2a$10$v0KNaBqWel6uE9FDt0Tr6ubnVCRQIJ3KKko5lerUJKCF6tTLXt6qC";
+        const JSONBIN_API_KEY = "$2a$10$gs19IghnkwnYX5kB9olXU.9qx34bAPY6.kY4zATAD1lVgQnAB49Uy";
 
         const CLOUD_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
 
@@ -5814,6 +5814,270 @@
         }
 
         setTimeout(runTitle, 200);   // 进页面 0.2 秒后开始
+    })();
+    </script>
+
+    <!-- ===== 🎄 圣诞特别篇 CHRISTMAS ADDON ===== -->
+    <style>
+        #xmas-bg{position:fixed;inset:0;z-index:-1;display:none;background:linear-gradient(135deg,#0b3d2e 0%,#14532d 30%,#7f1d1d 65%,#d4af37 100%);background-size:300% 300%;animation:gradientBG 10s ease infinite}
+        body.xmas-on{background:linear-gradient(135deg,#0b3d2e 0%,#14532d 30%,#7f1d1d 65%,#d4af37 100%) !important;background-size:300% 300% !important}
+        #xmas-snow{position:fixed;inset:0;z-index:9000;pointer-events:none;display:none}
+        #xmas-fab{position:fixed;right:14px;bottom:18px;z-index:9400;width:54px;height:54px;border-radius:50%;border:3px solid #ffd700;background:linear-gradient(180deg,#e63946,#a4161a);font-size:28px;cursor:pointer;box-shadow:0 0 18px rgba(230,57,70,.7);animation:xmasPulse 2.4s ease-in-out infinite}
+        @keyframes xmasPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+        #xmas-modal{position:fixed;inset:0;z-index:12400;display:none;align-items:center;justify-content:center;padding:14px;background:rgba(8,28,20,.94)}
+        #xmas-modal.show{display:flex}
+        .xm-card{position:relative;width:100%;max-width:400px;max-height:92vh;overflow-y:auto;background:linear-gradient(180deg,#fff7f0,#ffe3e3);border:3px solid #c1121f;border-radius:22px;padding:16px 14px;color:#3b1a1a;text-align:center;box-shadow:0 0 30px rgba(255,215,0,.45)}
+        .xm-x{position:absolute;top:8px;right:12px;background:none;border:none;font-size:22px;cursor:pointer;color:#7f1d1d}
+        .xm-title{font-size:19px;font-weight:bold;color:#c1121f;margin:2px 0 8px}
+        .xm-tabs{display:flex;gap:6px;margin:6px 0 10px}
+        .xm-tab{flex:1;padding:8px 2px;font-size:13px;font-weight:bold;border:none;border-radius:10px;background:#14532d;color:#fff;cursor:pointer;font-family:inherit}
+        .xm-tab.on{background:#c1121f}
+        .xm-btn{background:#ffd700;color:#3a1150;border:none;border-radius:20px;padding:9px 16px;font-size:14px;font-weight:bold;cursor:pointer;font-family:inherit;margin:4px}
+        .xm-pane{display:none}.xm-pane.on{display:block}
+        .xm-p{font-size:13px;line-height:1.7;color:#5a2a2a}
+        /* 照片挂饰树 */
+        #xm-tree{position:relative;height:300px;margin:6px auto;border-radius:14px;background:radial-gradient(ellipse at 50% 100%,#0b2a40,#06121f);overflow:hidden}
+        #xm-tree .base{position:absolute;left:50%;bottom:-6px;transform:translateX(-50%);font-size:250px;line-height:1;filter:drop-shadow(0 0 14px rgba(80,255,120,.35))}
+        .xm-hook{position:absolute;width:54px;height:54px;transform:translate(-50%,-50%);border-radius:50%;border:2px dashed #ffd700;background:rgba(255,215,0,.15);color:#ffd700;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;animation:xmasPulse 2s infinite}
+        .xm-ball{position:absolute;width:56px;height:56px;transform:translate(-50%,-50%);border-radius:50%;border:3px solid #ffd700;overflow:hidden;cursor:pointer;background:#c1121f;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 0 14px #ffd700;animation:xmDrop .7s cubic-bezier(.3,1.6,.5,1)}
+        .xm-ball img{width:100%;height:100%;object-fit:cover}
+        .xm-ball::before{content:"";position:absolute;top:-8px;left:50%;width:2px;height:8px;background:#ffd700}
+        @keyframes xmDrop{from{top:-10%;opacity:0}}
+        /* 手机来电 */
+        #xcall{position:fixed;inset:0;z-index:12700;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.88)}
+        #xcall.show{display:flex}
+        .xph{position:relative;width:min(84vw,320px);height:min(86vh,640px);border:7px solid #111;border-radius:36px;background:#000;box-shadow:0 0 0 2px #444,0 0 40px rgba(230,57,70,.5);overflow:hidden}
+        .xph::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:90px;height:20px;background:#111;border-radius:0 0 14px 14px;z-index:5}
+        .xscr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;color:#fff;background:linear-gradient(180deg,#14532d,#0b1f17 60%,#3b0a0a);overflow:hidden}
+        .xin{position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;padding-top:60px}
+        .xav{font-size:76px;width:120px;height:120px;border-radius:50%;background:#c1121f;display:flex;align-items:center;justify-content:center;margin:14px 0 10px;animation:xmShake .5s infinite}
+        @keyframes xmShake{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
+        .xnm{font-size:24px;font-weight:bold}
+        .xst{font-size:13px;opacity:.8;margin-top:4px}
+        .xtrk{position:absolute;left:18px;right:18px;bottom:46px;height:58px;border-radius:30px;background:rgba(255,255,255,.18);overflow:hidden}
+        .xtrk span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-left:40px;font-size:14px;opacity:.9}
+        .xthumb{position:absolute;left:4px;top:4px;width:50px;height:50px;border-radius:50%;background:#2ecc71;font-size:24px;display:flex;align-items:center;justify-content:center;touch-action:none;cursor:grab;z-index:2}
+        #xrej{position:absolute;left:30px;top:62%;padding:9px 16px;border:none;border-radius:20px;background:#e63946;color:#fff;font-size:14px;font-weight:bold;font-family:inherit;transition:left .15s,top .15s;z-index:3}
+        .xvid{width:100%;height:100%;object-fit:contain;background:#000}
+        .xhang{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:58px;height:58px;border-radius:50%;border:none;background:#e63946;font-size:24px;cursor:pointer;z-index:6}
+        .xgift{font-size:96px;margin-top:140px;cursor:pointer;animation:xmasPulse 1.2s infinite}
+        .xerr{position:absolute;top:50px;left:10px;right:10px;font-size:12px;background:rgba(0,0,0,.7);padding:6px;border-radius:8px;z-index:4}
+        #xm-lb{position:fixed;inset:0;z-index:12750;display:none;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.9);color:#fff;text-align:center;padding:20px}
+        #xm-lb.show{display:flex}
+        #xm-lb img{max-width:92vw;max-height:70vh;border-radius:14px;border:3px solid #ffd700}
+    </style>
+
+    <div id="xmas-bg"></div>
+    <canvas id="xmas-snow"></canvas>
+    <button id="xmas-fab" onclick="xmasOpen()" title="圣诞特别篇">🎄</button>
+
+    <div id="xmas-modal">
+        <div class="xm-card">
+            <button class="xm-x" onclick="xmasClose()">✕</button>
+            <div class="xm-title">🎅 圣诞特别篇 🎄</div>
+            <div class="xm-tabs">
+                <button class="xm-tab on" data-t="call">📞 圣诞来电</button>
+                <button class="xm-tab" data-t="photo">🎄 照片挂饰</button>
+            </div>
+            <div class="xm-pane on" id="xm-p-call">
+                <div style="font-size:60px">🎅📱</div>
+                <p class="xm-p">圣诞老人好像有话想对你说……<br>点下面的按钮，准备接电话吧 🔔</p>
+                <button class="xm-btn" onclick="xmasStartCall()">📞 等待来电</button>
+            </div>
+            <div class="xm-pane" id="xm-p-photo">
+                <p class="xm-p">点树上的金色圆圈，把照片挂上去；点挂好的照片可以放大 ✨<br>三张都挂满，会有一份祝福 🎁</p>
+                <div id="xm-tree"><span class="base">🎄</span></div>
+                <div id="xm-photo-ctl"></div>
+            </div>
+            <div style="margin-top:10px"><button class="xm-btn" id="xm-snowbtn" onclick="xmasToggleSnow()">❄️ 关闭下雪</button></div>
+        </div>
+    </div>
+
+    <div id="xcall"><div class="xph"><div class="xscr" id="xscr"></div></div></div>
+    <div id="xm-lb" onclick="this.classList.remove('show')"><img id="xm-lb-img" alt=""><div id="xm-lb-tx" style="margin-top:14px;font-size:15px;line-height:1.7"></div><div style="margin-top:10px;font-size:12px;opacity:.6">点击任意处关闭</div></div>
+
+    <script>
+    (function () {
+        // ============ 👇 在这里改文件名和文字（文件放在和网页同一个文件夹）============
+        var CFG = {
+            callerName: '圣诞老人',
+            callVideo:  'xmas-call.mp4',   // 接听后在手机里播放的视频
+            giftVideo:  'xmas-gift.mp4',   // 挂断后的惊喜视频
+            blessVideo: 'xmas-bless.mp4',  // 三张照片挂满后的祝福视频
+            photos: [                      // 三张照片挂饰
+                {src: 'xmas-photo1.jpg', text: '愿你被温柔以待 🎄'},
+                {src: 'xmas-photo2.jpg', text: '今年也要开开心心 🎁'},
+                {src: 'xmas-photo3.jpg', text: '新的一年万事胜意 ⭐'}
+            ]
+        };
+        // ===========================================================================
+        function $(id){return document.getElementById(id)}
+        function lsGet(k){try{return localStorage.getItem(k)}catch(e){return null}}
+        function lsSet(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+
+        // ---------- 下雪 + 红绿金背景 ----------
+        var snowOn = lsGet('xmas_snow') !== '0', cv = $('xmas-snow'), cx = cv.getContext('2d'), flakes = [], raf = null;
+        function resize(){cv.width = innerWidth; cv.height = innerHeight}
+        function frame(){
+            cx.clearRect(0, 0, cv.width, cv.height); cx.fillStyle = 'rgba(255,255,255,.92)';
+            flakes.forEach(function(f){
+                f.y += f.v; f.x += Math.sin((f.y + f.p) / 40) * .5;
+                if (f.y > cv.height) { f.y = -5; f.x = Math.random() * cv.width; }
+                cx.beginPath(); cx.arc(f.x, f.y, f.r, 0, 6.3); cx.fill();
+            });
+            raf = requestAnimationFrame(frame);
+        }
+        function applySnow(){
+            cv.style.display = snowOn ? 'block' : 'none';
+            $('xmas-bg').style.display = snowOn ? 'block' : 'none';
+            document.body.classList.toggle('xmas-on', snowOn);
+            $('xm-snowbtn').innerText = snowOn ? '❄️ 关闭下雪' : '❄️ 开启下雪';
+            if (raf) { cancelAnimationFrame(raf); raf = null; }
+            if (snowOn) { resize(); raf = requestAnimationFrame(frame); }
+        }
+        for (var i = 0; i < 70; i++) flakes.push({x:Math.random()*innerWidth, y:Math.random()*innerHeight, r:1+Math.random()*2.6, v:.6+Math.random()*1.4, p:Math.random()*100});
+        addEventListener('resize', resize);
+        window.xmasToggleSnow = function(){snowOn = !snowOn; lsSet('xmas_snow', snowOn ? '1' : '0'); applySnow()};
+
+        // ---------- 弹窗 / 页签 ----------
+        window.xmasOpen = function(){$('xmas-modal').classList.add('show'); renderTree()};
+        window.xmasClose = function(){$('xmas-modal').classList.remove('show')};
+        document.querySelectorAll('.xm-tab').forEach(function(b){
+            b.onclick = function(){
+                document.querySelectorAll('.xm-tab,.xm-pane').forEach(function(x){x.classList.remove('on')});
+                b.classList.add('on'); $('xm-p-' + b.dataset.t).classList.add('on');
+            };
+        });
+
+        // ---------- 背景音乐暂停 / 恢复 ----------
+        var bgmWas = false;
+        function bgmPause(){var a = $('bgm-audio'); if (a && !a.paused) { bgmWas = true; a.pause(); } else bgmWas = false}
+        function bgmResume(){var a = $('bgm-audio'); if (a && bgmWas) { try { a.play(); } catch (e) {} } bgmWas = false}
+
+        // ---------- 铃声（合成《Jingle Bells》）+ 震动 ----------
+        var ac = null, ringT = null, vibT = null;
+        var TUNE = [[659,1],[659,1],[659,2],[659,1],[659,1],[659,2],[659,1],[784,1],[523,1.5],[587,.5],[659,4]];
+        function playTune(){
+            if (!ac) return; var t = ac.currentTime + .05;
+            TUNE.forEach(function(n){
+                var o = ac.createOscillator(), g = ac.createGain(); o.type = 'triangle'; o.frequency.value = n[0];
+                g.gain.setValueAtTime(.0001, t); g.gain.exponentialRampToValueAtTime(.35, t + .02); g.gain.exponentialRampToValueAtTime(.0001, t + n[1] * .2 - .02);
+                o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + n[1] * .2); t += n[1] * .2;
+            });
+        }
+        function startRing(){
+            try { ac = ac || new (window.AudioContext || window.webkitAudioContext)(); ac.resume(); } catch (e) {}
+            playTune(); ringT = setInterval(playTune, 5000);
+            function vib(){ try { navigator.vibrate && navigator.vibrate([500, 250, 500, 250, 500]); } catch (e) {} }
+            vib(); vibT = setInterval(vib, 2800);
+        }
+        function stopRing(){
+            clearInterval(ringT); clearInterval(vibT);
+            try { navigator.vibrate && navigator.vibrate(0); } catch (e) {}
+        }
+
+        // ---------- 圣诞来电流程 ----------
+        var scr = $('xscr'), ov = $('xcall');
+        function showErr(f){var d = document.createElement('div'); d.className = 'xerr'; d.innerHTML = '⚠️ 视频没加载出来：请确认 <b>' + f + '</b> 和网页放在同一文件夹（H.264 的 MP4）'; scr.appendChild(d)}
+        function closeCall(){
+            stopRing(); ov.classList.remove('show'); scr.innerHTML = '';
+            bgmResume();
+        }
+        function playStage(src, onDone){
+            scr.innerHTML = '<video class="xvid" playsinline webkit-playsinline autoplay></video><button class="xhang" title="挂断">📵</button>';
+            var v = scr.querySelector('video'), done = false;
+            function end(){if (done) return; done = true; try { v.pause(); } catch (e) {} onDone()}
+            v.onerror = function(){showErr(src)};
+            v.onended = end; scr.querySelector('.xhang').onclick = end;
+            v.src = src; var p = v.play(); if (p && p.catch) p.catch(function(){v.controls = true});
+        }
+        function giftStage(){
+            scr.innerHTML = '<div class="xin"><div class="xnm">🎁 圣诞老人留下了礼物</div><div class="xst">点一点，拆开看看</div><div class="xgift">🎁</div></div>';
+            scr.querySelector('.xgift').onclick = function(){
+                try { confetti({particleCount:90, spread:80, origin:{y:.5}, colors:['#e63946','#2d6a4f','#ffd700','#fff']}); } catch (e) {}
+                playStage(CFG.giftVideo, closeCall);
+            };
+        }
+        function answer(){
+            stopRing();
+            playStage(CFG.callVideo, giftStage);
+        }
+        function ringStage(){
+            scr.innerHTML = '<div class="xin"><div class="xst">📞 来电中…</div><div class="xav">🎅</div><div class="xnm">' + CFG.callerName + '</div><div class="xst">圣诞来电 · 有话想对你说</div>' +
+                '<button id="xrej">拒绝</button><div class="xtrk"><span>滑动接听 ➜</span><div class="xthumb">📞</div></div></div>';
+            // 拒绝键：永远按不到
+            var rej = $('xrej'), box = scr.querySelector('.xin'), tips = ['哎呀按不到～', '想拒绝？没门 😝', '圣诞老人不会挂你电话的', '手别抖！', '拒绝失败，请接听 🎅'], ti = 0;
+            function run(e){
+                if (e) { e.preventDefault && e.preventDefault(); e.stopPropagation && e.stopPropagation(); }
+                var w = box.clientWidth - 90, h = box.clientHeight;
+                rej.style.left = Math.max(8, Math.random() * w) + 'px';
+                rej.style.top = (h * .32 + Math.random() * h * .38) + 'px';
+                rej.innerText = tips[ti++ % tips.length];
+            }
+            ['pointerenter', 'pointerdown', 'touchstart', 'mousedown', 'click'].forEach(function(ev){rej.addEventListener(ev, run, {passive: false})});
+            // 滑动接听
+            var th = scr.querySelector('.xthumb'), trk = scr.querySelector('.xtrk'), sx = 0, dragging = false;
+            th.addEventListener('pointerdown', function(e){dragging = true; sx = e.clientX; th.setPointerCapture(e.pointerId)});
+            th.addEventListener('pointermove', function(e){
+                if (!dragging) return; var max = trk.clientWidth - 58;
+                var x = Math.max(0, Math.min(max, e.clientX - sx)); th.style.left = (4 + x) + 'px';
+                if (x > max * .85) { dragging = false; answer(); }
+            });
+            function up(){if (!dragging) return; dragging = false; th.style.transition = 'left .2s'; th.style.left = '4px'; setTimeout(function(){th.style.transition = ''}, 220)}
+            th.addEventListener('pointerup', up); th.addEventListener('pointercancel', up);
+        }
+        window.xmasStartCall = function(){
+            xmasClose(); bgmPause(); ov.classList.add('show');
+            scr.innerHTML = '<div class="xin"><div class="xst" style="margin-top:200px">📱 手机在响……</div></div>';
+            setTimeout(function(){ringStage(); startRing()}, 900);
+        };
+
+        // ---------- 照片挂饰树 ----------
+        var HOOKS = [[50, 27], [33, 55], [68, 63]];
+        var hung = [];
+        try { hung = JSON.parse(lsGet('xmas_hung') || '[]'); } catch (e) {}
+        function ball(i){
+            var d = document.createElement('div'); d.className = 'xm-ball';
+            d.style.left = HOOKS[i][0] + '%'; d.style.top = HOOKS[i][1] + '%';
+            var im = new Image(); im.src = CFG.photos[i].src; im.alt = '';
+            im.onerror = function(){d.innerHTML = '📷'};
+            d.appendChild(im);
+            d.onclick = function(){$('xm-lb-img').src = CFG.photos[i].src; $('xm-lb-tx').innerText = CFG.photos[i].text; $('xm-lb').classList.add('show')};
+            return d;
+        }
+        function bless(){
+            xmasClose(); bgmPause(); ov.classList.add('show');
+            playStage(CFG.blessVideo, closeCall);
+        }
+        function renderTree(){
+            var t = $('xm-tree'); t.querySelectorAll('.xm-hook,.xm-ball').forEach(function(n){n.remove()});
+            HOOKS.forEach(function(h, i){
+                if (hung.indexOf(i) > -1) { t.appendChild(ball(i)); return; }
+                var b = document.createElement('button'); b.className = 'xm-hook'; b.innerText = '＋';
+                b.style.left = h[0] + '%'; b.style.top = h[1] + '%';
+                b.onclick = function(){
+                    hung.push(i); lsSet('xmas_hung', JSON.stringify(hung)); renderTree();
+                    if (hung.length === HOOKS.length) {
+                        try { confetti({particleCount:100, spread:90, origin:{y:.5}, colors:['#e63946','#2d6a4f','#ffd700','#fff']}); } catch (e) {}
+                        setTimeout(bless, 1400);
+                    }
+                };
+                t.appendChild(b);
+            });
+            var c = $('xm-photo-ctl'); c.innerHTML = '';
+            if (hung.length === HOOKS.length) {
+                c.innerHTML = '<button class="xm-btn" id="xm-re1">🎁 再看一次祝福</button><button class="xm-btn" id="xm-re2" style="background:#ddd">🧹 重新挂</button>';
+                $('xm-re1').onclick = bless;
+                $('xm-re2').onclick = function(){hung = []; lsSet('xmas_hung', '[]'); renderTree()};
+            }
+        }
+        renderTree();
+
+        // ---------- 密码页顶部标语 ----------
+        var env = $('envelope-card');
+        if (env) { var st = document.createElement('div'); st.style.cssText = 'text-align:center;font-size:13px;color:#c1121f;font-weight:bold;margin-bottom:4px'; st.innerText = '🎅 圣诞特别版 · 右下角有惊喜 🎄'; env.insertBefore(st, env.firstChild); }
+
+        applySnow();
     })();
     </script>
 
